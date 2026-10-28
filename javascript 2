@@ -1,355 +1,163 @@
-
-/* =========================================
-   1. JAVASCRIPT BASICS
-========================================= */
+// 1. JAVASCRIPT BASICS
 console.log("Hello JavaScript");
 console.log(10 + 20);
 
-
-/* =========================================
-   2. COMMENTS
-========================================= */
-// Single-line comment
-
-/*
-Multi-line
-comment
-*/
+// 2. COMMENTS
 console.log("Hello");
 
-
-/* =========================================
-   3. VARIABLES - VAR, LET, CONST
-========================================= */
+// 3. VARIABLES — VAR, LET, CONST
 var a = 10;
 let b = 20;
 const c = 30;
-
 console.log(a);
 console.log(b);
 console.log(c);
 
-// Reassignment
-let x = 10;
-x = 20;
-console.log(x);
-
-const y = 10;
-// y = 20; // Error: const cannot be reassigned
-console.log(y);
-
-
-/* =========================================
-   4. SCOPE
-========================================= */
-// Global Scope
+// 4. SCOPE
 let college = "United University";
-
 function show() {
     console.log(college);
 }
 show();
 
-// Function Scope
-function test() {
-    let num = 10;
-    console.log(num);
-}
-test();
-// console.log(num); // Error
-
-// Block Scope
-if (true) {
-    let p = 10;
-    const q = 20;
-    console.log(p);
-    console.log(q);
-}
-// console.log(p); // Error
-
-// var vs let
-if (true) {
-    var m = 10;
-    let n = 20;
-}
-console.log(m);
-// console.log(n); // Error
-
-
-/* =========================================
-   5. SCOPE CHAIN
-========================================= */
-let collegeName = "United University";
-
+// 5. SCOPE CHAIN
+let college = "United University";
 function teacher() {
     let subject = "JavaScript";
-
     function lecture() {
         let topic = "Scope";
-        console.log(collegeName);
+        console.log(college);
         console.log(subject);
         console.log(topic);
     }
-
     lecture();
 }
 teacher();
 
-
-/* =========================================
-   6. DATA TYPES
-========================================= */
-let studentName = "Rahul";       // String
-let age = 20;                     // Number
-let passed = true;                // Boolean
-let value;                        // Undefined
-let empty = null;                 // Null
-let big = 12345678901234567890n;  // BigInt
-let id = Symbol("id");            // Symbol
-
-console.log(typeof studentName);
+// 6. DATA TYPES
+let name = "Rahul";
+let age = 20;
+let passed = true;
+let x;
+let y = null;
+console.log(typeof name);
 console.log(typeof age);
 console.log(typeof passed);
-console.log(typeof value);
-console.log(typeof empty);
-console.log(typeof big);
-console.log(typeof id);
+console.log(typeof x);
+console.log(typeof y);
 
+// 7. PRIMITIVE VS REFERENCE TYPES
+let a = 10;
+let b = a;
+b = 20;
+console.log(a);
+console.log(b);
 
-/* =========================================
-   7. PRIMITIVE VS REFERENCE TYPES
-========================================= */
-// Primitive Type
-let num1 = 10;
-let num2 = num1;
-num2 = 20;
+// 8. TYPE CONVERSION
+let x = "10";
+let y = Number(x);
+console.log(y);
+console.log(typeof y);
 
-console.log(num1);
-console.log(num2);
+// 9. OPERATORS
+let a = 10;
+let b = 3;
+console.log(a + b);
+console.log(a - b);
+console.log(a * b);
+console.log(a / b);
+console.log(a % b);
+console.log(a ** b);
 
-// Reference Type
-let student1 = { name: "Rahul" };
-let student2 = student1;
+// 10. ASSIGNMENT OPERATORS
+let x = 10;
+x += 5;
+console.log(x);
+x -= 2;
+console.log(x);
 
-student2.name = "Amit";
-console.log(student1.name);
-
-
-/* =========================================
-   8. TYPE CONVERSION
-========================================= */
-let str = "10";
-
-console.log(typeof str);
-
-let converted = Number(str);
-console.log(converted);
-console.log(typeof converted);
-
-console.log(String(100));
-console.log(Number("100"));
-console.log(Boolean(1));
-console.log(Boolean(0));
-
-
-/* =========================================
-   9. OPERATORS
-========================================= */
-// Arithmetic Operators
-let numA = 10;
-let numB = 3;
-
-console.log(numA + numB);
-console.log(numA - numB);
-console.log(numA * numB);
-console.log(numA / numB);
-console.log(numA % numB);
-console.log(numA ** numB);
-
-// Increment and Decrement
-let count = 10;
-count++;
-console.log(count);
-
-count--;
-console.log(count);
-
-
-/* =========================================
-   10. ASSIGNMENT OPERATORS
-========================================= */
-let total = 10;
-
-total += 5;
-console.log(total);
-
-total -= 2;
-console.log(total);
-
-total *= 2;
-console.log(total);
-
-total /= 2;
-console.log(total);
-
-
-/* =========================================
-   11. COMPARISON OPERATORS
-========================================= */
+// 11. COMPARISON OPERATORS
 console.log(10 > 5);
 console.log(10 < 5);
-console.log(10 >= 10);
-console.log(10 == "10");  // Loose equality
-console.log(10 === "10"); // Strict equality
+console.log(10 == "10");
+console.log(10 === "10");
 
+// 12. LOGICAL OPERATORS
+let age = 20;
+let student = true;
+console.log(age >= 18 && student);
+console.log(age >= 18 || student);
+console.log(!student);
 
-/* =========================================
-   12. LOGICAL OPERATORS
-========================================= */
-let userAge = 20;
-let isStudent = true;
-
-console.log(userAge >= 18 && isStudent);
-console.log(userAge >= 18 || isStudent);
-console.log(!isStudent);
-
-
-/* =========================================
-   13. IF STATEMENT
-========================================= */
+// 13. IF
 let marks = 75;
-
 if (marks >= 40) {
     console.log("Pass");
 }
 
-
-/* =========================================
-   14. IF...ELSE STATEMENT
-========================================= */
-let marks2 = 35;
-
-if (marks2 >= 40) {
+// 14. IF...ELSE
+let marks = 35;
+if (marks >= 40) {
     console.log("Pass");
 } else {
     console.log("Fail");
 }
 
-
-/* =========================================
-   15. ELSE IF STATEMENT
-========================================= */
-let marks3 = 78;
-
-if (marks3 >= 90) {
+// 15. ELSE IF
+let marks = 78;
+if (marks >= 90) {
     console.log("A+");
-} else if (marks3 >= 75) {
+} else if (marks >= 75) {
     console.log("A");
-} else if (marks3 >= 60) {
+} else if (marks >= 60) {
     console.log("B");
-} else if (marks3 >= 40) {
+} else if (marks >= 40) {
     console.log("C");
 } else {
     console.log("Fail");
 }
 
+// 16. TERNARY OPERATOR
+let age = 20;
+let result = age >= 18 ? "Adult" : "Minor";
+console.log(result);
 
-/* =========================================
-   16. TERNARY OPERATOR
-========================================= */
-// Using if...else
-let age1 = 20;
-
-if (age1 >= 18) {
-    console.log("Adult");
-} else {
-    console.log("Minor");
-}
-
-// Using Ternary Operator
-let result1 = age1 >= 18 ? "Adult" : "Minor";
-console.log(result1);
-
-
-/* =========================================
-   17. SWITCH STATEMENT
-========================================= */
+// 17. SWITCH
 let day = 2;
-
 switch (day) {
     case 1:
         console.log("Monday");
         break;
-
     case 2:
         console.log("Tuesday");
         break;
-
     case 3:
         console.log("Wednesday");
         break;
-
     default:
         console.log("Invalid day");
 }
 
-
-/* =========================================
-   18. FOR LOOP
-========================================= */
-// Print 1 to 5
+// 18. FOR LOOP
 for (let i = 1; i <= 5; i++) {
     console.log(i);
 }
 
-// Print even numbers from 1 to 10
-for (let i = 1; i <= 10; i++) {
-    if (i % 2 == 0) {
-        console.log(i);
-    }
-}
-
-
-/* =========================================
-   19. WHILE LOOP
-========================================= */
+// 19. WHILE LOOP
 let i = 1;
-
 while (i <= 5) {
     console.log(i);
     i++;
 }
 
-
-/* =========================================
-   20. DO...WHILE LOOP
-========================================= */
-// Print 1 to 5
-let j = 1;
-
+// 20. DO...WHILE LOOP
+let i = 1;
 do {
-    console.log(j);
-    j++;
-} while (j <= 5);
+    console.log(i);
+    i++;
+} while (i <= 5);
 
-// Difference between while and do...while
-let k = 10;
-
-while (k < 5) {
-    console.log(k);
-}
-
-// do...while executes at least once
-let l = 10;
-
-do {
-    console.log(l);
-} while (l < 5);
-
-
-/* =========================================
-   21. BREAK STATEMENT
-========================================= */
+// 21. BREAK
 for (let i = 1; i <= 10; i++) {
     if (i == 5) {
         break;
@@ -357,10 +165,7 @@ for (let i = 1; i <= 10; i++) {
     console.log(i);
 }
 
-
-/* =========================================
-   22. CONTINUE STATEMENT
-========================================= */
+// 22. CONTINUE
 for (let i = 1; i <= 5; i++) {
     if (i == 3) {
         continue;
@@ -368,290 +173,361 @@ for (let i = 1; i <= 5; i++) {
     console.log(i);
 }
 
-
-/* =========================================
-   23. FUNCTIONS
-========================================= */
+// 23. FUNCTIONS
 function greet() {
     console.log("Hello Students");
 }
 greet();
 
-
-/* =========================================
-   24. FUNCTION PARAMETERS
-========================================= */
-function greetUser(name) {
+// 24. FUNCTION PARAMETERS
+function greet(name) {
     console.log("Hello " + name);
 }
+greet("Rahul");
+greet("Amit");
 
-greetUser("Rahul");
-greetUser("Amit");
-
-
-/* =========================================
-   25. RETURN STATEMENT
-========================================= */
+// 25. RETURN
 function add(a, b) {
     return a + b;
 }
+let result = add(10, 20);
+console.log(result);
 
-let sum = add(10, 20);
-console.log(sum);
-
-
-/* =========================================
-   26. FUNCTION EXPRESSION
-========================================= */
-const addNumbers = function(a, b) {
+// 26. FUNCTION EXPRESSION
+const add = function(a, b) {
     return a + b;
 };
+console.log(add(10, 20));
 
-console.log(addNumbers(10, 20));
+// 27. ARROW FUNCTION
+const add = (a, b) => a + b;
+console.log(add(10, 20));
 
-
-/* =========================================
-   27. ARROW FUNCTION
-========================================= */
-// Normal Arrow Function
-const multiply = (a, b) => {
-    return a * b;
-};
-
-console.log(multiply(10, 20));
-
-// Short Arrow Function
-const addShort = (a, b) => a + b;
-console.log(addShort(10, 20));
-
-
-/* =========================================
-   28. ARRAYS
-========================================= */
+// 28. ARRAYS
 let students = ["Rahul", "Amit", "Neha"];
-
 console.log(students);
 console.log(students[0]);
 console.log(students[1]);
-console.log(students[2]);
 
+// 29. MODIFY ARRAY
+let students = ["Rahul", "Amit", "Neha"];
+students[1] = "Priya";
+console.log(students);
 
-/* =========================================
-   29. MODIFY ARRAY
-========================================= */
-let students2 = ["Rahul", "Amit", "Neha"];
+// 30. ARRAY METHODS
+let students = ["Rahul", "Amit"];
+students.push("Neha");
+console.log(students);
+students.pop();
+students.shift();
+students.unshift("Priya");
 
-students2[1] = "Priya";
-console.log(students2);
-
-
-/* =========================================
-   30. ARRAY METHODS
-========================================= */
-let students3 = ["Rahul", "Amit"];
-
-students3.push("Neha");
-console.log(students3);
-
-students3.pop();
-console.log(students3);
-
-students3.shift();
-console.log(students3);
-
-students3.unshift("Priya");
-console.log(students3);
-
-
-/* =========================================
-   31. ARRAY LENGTH
-========================================= */
+// 31. ARRAY LENGTH
 let numbers = [10, 20, 30, 40];
-
 console.log(numbers.length);
 
-
-/* =========================================
-   32. LOOP THROUGH ARRAY
-========================================= */
-let students4 = ["Rahul", "Amit", "Neha"];
-
-for (let i = 0; i < students4.length; i++) {
-    console.log(students4[i]);
+// 32. LOOP THROUGH ARRAY
+let students = ["Rahul", "Amit", "Neha"];
+for (let i = 0; i < students.length; i++) {
+    console.log(students[i]);
 }
 
-
-/* =========================================
-   33. FOR...OF LOOP
-========================================= */
-let students5 = ["Rahul", "Amit", "Neha"];
-
-for (let student of students5) {
+// 33. FOR...OF LOOP
+let students = ["Rahul", "Amit", "Neha"];
+for (let student of students) {
     console.log(student);
 }
 
+// 34. FOREACH()
+let numbers = [10, 20, 30];
+numbers.forEach(number => console.log(number));
 
-/* =========================================
-   34. FOREACH() METHOD
-========================================= */
-// Using Function
-let numbers2 = [10, 20, 30];
-
-numbers2.forEach(function(number) {
-    console.log(number);
-});
-
-// Using Arrow Function
-numbers2.forEach(number => console.log(number));
-
-
-/* =========================================
-   35. MAP() METHOD
-========================================= */
-let numbers3 = [1, 2, 3, 4];
-
-let squares = numbers3.map(function(number) {
-    return number * number;
-});
-
+// 35. MAP()
+let numbers = [1, 2, 3, 4];
+let squares = numbers.map(number => number * number);
 console.log(squares);
 
+// 36. FILTER()
+let marks = [35, 67, 89, 42, 25];
+let passed = marks.filter(mark => mark >= 40);
+console.log(passed);
 
-/* =========================================
-   36. FILTER() METHOD
-========================================= */
-let marks4 = [35, 67, 89, 42, 25];
+// 37. FIND()
+let marks = [35, 67, 89, 42];
+let result = marks.find(mark => mark > 80);
+console.log(result);
 
-let passedMarks = marks4.filter(function(mark) {
-    return mark >= 40;
-});
+// 38. REDUCE()
+let numbers = [10, 20, 30, 40];
+let total = numbers.reduce((sum, number) => sum + number, 0);
+console.log(total);
 
-console.log(passedMarks);
+// 39. STRINGS
+let name = "JavaScript";
+console.log(name.length);
+console.log(name.toUpperCase());
+console.log(name.toLowerCase());
+console.log(name.charAt(0));
 
-
-/* =========================================
-   37. FIND() METHOD
-========================================= */
-let marks5 = [35, 67, 89, 42];
-
-let found = marks5.find(mark => mark > 80);
-console.log(found);
-
-
-/* =========================================
-   38. REDUCE() METHOD
-========================================= */
-let numbers4 = [10, 20, 30, 40];
-
-let sumTotal = numbers4.reduce(function(sum, number) {
-    return sum + number;
-}, 0);
-
-console.log(sumTotal);
-
-
-/* =========================================
-   39. STRINGS
-========================================= */
-let language = "JavaScript";
-
-console.log(language.length);
-console.log(language.toUpperCase());
-console.log(language.toLowerCase());
-console.log(language.charAt(0));
-
-
-/* =========================================
-   40. STRING METHODS
-========================================= */
+// 40. STRING METHODS
 let text = "Hello JavaScript";
-
 console.log(text.includes("Java"));
 console.log(text.startsWith("Hello"));
 console.log(text.endsWith("Script"));
 console.log(text.indexOf("Java"));
 
+// 41. TEMPLATE LITERALS
+let name = "Rahul";
+let age = 20;
+console.log(`My name is ${name} and my age is ${age}`);
 
-/* =========================================
-   41. TEMPLATE LITERALS
-========================================= */
-// Using Concatenation
-let personName = "Rahul";
-let personAge = 20;
-
-console.log("My name is " + personName + " and my age is " + personAge);
-
-// Using Template Literals
-console.log(`My name is ${personName} and my age is ${personAge}`);
-
-
-/* =========================================
-   42. OBJECTS
-========================================= */
+// 42. OBJECTS
 let student = {
     name: "Rahul",
     age: 20,
     course: "BCA"
 };
-
 console.log(student.name);
 console.log(student.age);
 console.log(student.course);
 
-
-/* =========================================
-   43. OBJECT METHOD
-========================================= */
-let studentObj = {
+// 43. OBJECT METHODS
+let student = {
     name: "Rahul",
-
     greet: function() {
         console.log("Hello " + this.name);
     }
 };
+student.greet();
 
-studentObj.greet();
-
-
-/* =========================================
-   44. ADD/DELETE OBJECT PROPERTY
-========================================= */
-let studentInfo = {
+// 44. ADD/DELETE OBJECT PROPERTY
+let student = {
     name: "Rahul",
     age: 20
 };
+student.city = "Prayagraj";
+delete student.age;
+console.log(student);
 
-studentInfo.city = "Prayagraj";
-delete studentInfo.age;
-
-console.log(studentInfo);
-
-
-/* =========================================
-   45. NESTED OBJECTS
-========================================= */
-let studentAddress = {
+// 45. NESTED OBJECTS
+let student = {
     name: "Rahul",
-
     address: {
         city: "Prayagraj",
         state: "UP"
     }
 };
+console.log(student.address.city);
 
-console.log(studentAddress.address.city);
-console.log(studentAddress.address.state);
-
-
-/* =========================================
-   46. DESTRUCTURING
-========================================= */
-let studentData = {
+// 46. DESTRUCTURING
+let student = {
     name: "Rahul",
     age: 20
 };
-
-let { name, age } = studentData;
-
+let { name, age } = student;
 console.log(name);
 console.log(age);
+
+// 47. SPREAD OPERATOR
+let a = [1, 2, 3];
+let b = [...a, 4, 5];
+console.log(b);
+
+// 48. REST PARAMETER
+function add(...numbers) {
+    let total = 0;
+    for (let number of numbers) {
+        total += number;
+    }
+    return total;
+}
+console.log(add(10, 20, 30, 40));
+
+// 49. HOISTING
+console.log(x);
+var x = 10;
+
+// 50. FUNCTION HOISTING
+greet();
+function greet() {
+    console.log("Hello");
+}
+
+// 51. CLOSURES
+function outer() {
+    let count = 0;
+    function inner() {
+        count++;
+        console.log(count);
+    }
+    return inner;
+}
+let counter = outer();
+counter();
+counter();
+counter();
+
+// 52. THIS KEYWORD
+let student = {
+    name: "Rahul",
+    showName: function() {
+        console.log(this.name);
+    }
+};
+student.showName();
+
+// 53. OPTIONAL CHAINING
+let student = {
+    name: "Rahul"
+};
+console.log(student.address?.city);
+
+// 54. NULLISH COALESCING
+let name = null;
+let result = name ?? "Unknown";
+console.log(result);
+
+// 55. ERROR HANDLING
+try {
+    let result = x + 10;
+} catch (error) {
+    console.log("Something went wrong");
+} finally {
+    console.log("This always runs");
+}
+
+// 56. DOM — CONNECT JAVASCRIPT WITH HTML
+let heading = document.getElementById("title");
+console.log(heading);
+document.getElementById("title").innerText = "Hello JavaScript";
+
+// 57. CHANGE CSS WITH JAVASCRIPT
+let heading = document.getElementById("title");
+heading.style.color = "red";
+heading.style.fontSize = "40px";
+
+// 58. EVENTS
+function sayHello() {
+    alert("Hello Students!");
+}
+let button = document.querySelector("button");
+button.addEventListener("click", function() {
+    console.log("Button clicked");
+});
+
+// 59. INPUT AND DOM
+function showName() {
+    let name = document.getElementById("name").value;
+    document.getElementById("result").innerText = "Hello " + name;
+}
+
+// 60. FORM VALIDATION
+function validate() {
+    let name = document.getElementById("name").value;
+    if (name == "") {
+        alert("Name is required");
+        return false;
+    }
+    return true;
+}
+
+// 61. LOCALSTORAGE
+localStorage.setItem("name", "Rahul");
+let name = localStorage.getItem("name");
+console.log(name);
+localStorage.removeItem("name");
+localStorage.clear();
+
+// 62. JSON
+let student = {
+    name: "Rahul",
+    age: 20
+};
+let jsonData = JSON.stringify(student);
+console.log(jsonData);
+let objectData = JSON.parse(jsonData);
+console.log(objectData.name);
+
+// 63. CLASSES
+class Student {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    showDetails() {
+        console.log(this.name);
+        console.log(this.age);
+    }
+}
+let s1 = new Student("Rahul", 20);
+s1.showDetails();
+
+// 64. INHERITANCE
+class Student {
+    study() {
+        console.log("Student is studying");
+    }
+}
+class BCAStudent extends Student {
+    code() {
+        console.log("Student is coding");
+    }
+}
+let s = new BCAStudent();
+s.study();
+s.code();
+
+// 65. CALLBACK FUNCTION
+function greet(name, callback) {
+    console.log("Hello " + name);
+    callback();
+}
+function finish() {
+    console.log("Welcome to JavaScript");
+}
+greet("Rahul", finish);
+
+// 66. PROMISE
+let promise = new Promise(function(resolve, reject) {
+    let success = true;
+    if (success) {
+        resolve("Task completed");
+    } else {
+        reject("Task failed");
+    }
+});
+promise
+    .then(result => console.log(result))
+    .catch(error => console.log(error));
+
+// 67. ASYNC/AWAIT
+function getData() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve("Data received");
+        }, 2000);
+    });
+}
+async function showData() {
+    console.log("Waiting...");
+    let result = await getData();
+    console.log(result);
+}
+showData();
+
+// 68. FETCH API
+fetch("https://jsonplaceholder.typicode.com/users")
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
+
+async function getUsers() {
+    try {
+        let response = await fetch("https://jsonplaceholder.typicode.com/users");
+        let users = await response.json();
+        console.log(users);
+    } catch (error) {
+        console.log(error);
+    }
+}
+getUsers();
